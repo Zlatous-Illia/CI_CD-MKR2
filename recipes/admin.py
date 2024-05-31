@@ -1,14 +1,7 @@
 from django.contrib import admin
-from .models import Author, Book
+from .models import Recipe
 
+class RecipeAdmin(admin.ModelAdmin):
+    list_display = ('title', 'year')  # Display these fields in the admin list view
 
-class BookAdmin(admin.ModelAdmin):
-    search_fields = ['title', 'authors__name']
-    list_filter = ['publication_date']
-    list_display = ['title', 'publication_date', 'price']
-    ordering = ['title']
-    fields = ['title', 'authors', 'publication_date', 'price']
-
-
-admin.site.register(Author)
-admin.site.register(Book, BookAdmin)
+admin.site.register(Recipe, RecipeAdmin)
