@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from books.models import Book, Author
+from recipes.models import Book, Author
 
 
 def main(request):
